@@ -2,8 +2,13 @@ import { useEffect,useState } from "react";
 import './App.css';
 // import { GetBulletin } from "./components/GetBulletin";
 
+interface Thread {
+  id: string; // または適切な型
+  title: string;
+}
+
 function App() {
-  const [threads, setThreads] = useState();
+  const [threads, setThreads] = useState<Thread[]>();
 
   useEffect(() => {
     fetch("https://railway.bulletinboard.techtrain.dev/threads")
@@ -24,12 +29,11 @@ function App() {
       <ul>
         {threads?.map(thread => {
           return (
-            <li key={thread}>{thread.title}</li>
+            <li key={thread.id}>{thread.title}</li>
           )
         })}
       </ul>
     </>
-
   )
 }
 
