@@ -9,9 +9,9 @@ interface Thread {
 
 function App() {
   const [threads, setThreads] = useState<Thread[]>();
-
+  const BASE_URL = 'https://railway.bulletinboard.techtrain.dev';
   useEffect(() => {
-    fetch("https://railway.bulletinboard.techtrain.dev/threads")
+    fetch(`${BASE_URL}/threads`)
       .then(response => response.json())
       .then(data => {
         setThreads(data);
