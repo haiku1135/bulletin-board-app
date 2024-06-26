@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect,useState, Fragment } from "react";
 // import { GetBulletimpin } from "./components/GetBulletin";
 import "./styles/globals.css";
 
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <header className="bg-blue-500 text-white p-4 text-6xl">
+      <header className="bg-blue-500 text-white p-4 text-6xl mb-4">
         <h1>掲示板</h1>
       </header>
       <h2 className="text-center text-3xl">新着スレッド</h2>
