@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
-import './App.css';
-// import { GetBulletin } from "./components/GetBulletin";
+// import { GetBulletimpin } from "./components/GetBulletin";
+import "./styles/globals.css";
 
 interface Thread {
   id: string; // または適切な型
@@ -18,18 +18,16 @@ function App() {
       })
   }, []);
 
-  console.log(threads);
-
   return (
     <>
-      <header>
+      <header className="bg-blue-500 text-white p-4 text-6xl">
         <h1>掲示板</h1>
       </header>
-      <h1>新着スレッド</h1>
-      <ul>
+      <h2 className="text-center text-3xl">新着スレッド</h2>
+      <ul className="text-center flex flex-col gap-4 mb-10">
         {threads?.map(thread => {
           return (
-            <li key={thread.id}>{thread.title}</li>
+            <li key={thread.id} className="text-2xl border max-w-[500px] mx-auto w-full p-4">{thread.title}</li>
           )
         })}
       </ul>
